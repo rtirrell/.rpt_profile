@@ -35,6 +35,11 @@ format_tuple <- function(values) {
 ##
 # Project utility functions.
 ##
+
+# Files:
+# - boot.r is intended to be sourced only once, and contains (e.g.)
+#   library() statements.
+# - env.r 
 BOOT.FILENAMES <- c('boot.r', 'env.r', 'func.r', 'db.r', 'load.r')
 
 resource <- function(directory) {

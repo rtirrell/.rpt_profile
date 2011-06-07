@@ -15,4 +15,4 @@ rm-svn() {
   find . -name ".svn" -type d -exec rm -rf {} \;
 }
 
-. ~/.rpt-profile/etc/bash-aliases
+. ~/.rpt_profile/etc/bash_aliases

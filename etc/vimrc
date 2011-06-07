@@ -1,0 +1,2 @@
+" Toggle highlighting of search terms.
+nnoremap ; :set invhlsearch<CR>

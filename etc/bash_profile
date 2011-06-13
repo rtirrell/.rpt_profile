@@ -11,7 +11,7 @@ s() {
   fi;
 }
 
-rm-svn() {
+rm_svn() {
   find . -name ".svn" -type d -exec rm -rf {} \;
 }
 

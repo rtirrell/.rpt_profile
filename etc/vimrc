@@ -1,2 +1,5 @@
 " Toggle highlighting of search terms.
 nnoremap ; :set invhlsearch<CR>
+
+" Consider _ to be a word separator.
+set iskeyword-=_

@@ -1,2 +1,33 @@
 " Toggle highlighting of search terms.
+syn on
+colorscheme darkblue
+command! W w
+
+set autoindent
+set autoread
+set encoding=utf-8
+set expandtab " Soft tab.
+set hlsearch
+set ignorecase
+set incsearch
+set number  " Show lines to left of buffer.
+set ruler " Show line and column in status area.
+set showcmd
+set showtabline=2
+set smartindent
+set softtabstop=2
+set spell
+set sw=2
+set ts=2
+set autoread
+
+set wildmode=longest,list,full
+set wildmenu
+
+set nocompatible " We're running Vim, not Vi!
+filetype on " Enable filetype detection.
+filetype indent on " Enable filetype-specific indenting.
+filetype plugin on " Enable filetype-specific plugins.
+
 nnoremap ; :set invhlsearch<CR>
+set iskeyword-=_

@@ -15,4 +15,6 @@ rm_svn() {
   find . -name ".svn" -type d -exec rm -rf {} \;
 }
 
+for f in $(find ~/.rpt_profile/etc/sites -type f); do . $f; done
+
 . ~/.rpt_profile/etc/bash_aliases

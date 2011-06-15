@@ -13,12 +13,12 @@ set incsearch
 set number  " Show lines to left of buffer.
 set ruler " Show line and column in status area.
 set showcmd
-set showtabline=2
+set showtabline=4
 set smartindent
-set softtabstop=2
+set softtabstop=4
 set spell
-set sw=2
-set ts=2
+set sw=4
+set ts=4
 set autoread
 
 set wildmode=longest,list,full

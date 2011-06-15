@@ -1,6 +1,6 @@
 " Toggle highlighting of search terms.
 syn on
-colorscheme darkblue
+colorscheme default
 command! W w
 
 set autoindent

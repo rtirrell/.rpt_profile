@@ -11,8 +11,12 @@ s() {
   fi;
 }
 
-rm_svn() {
-  find . -name ".svn" -type d -exec rm -rf {} \;
+rmsvn() {
+    find . -name ".svn" -type d -exec rm -rf {} \;
+}
+
+svnupall() {
+    find . -type d -depth 1 -exec svn up {} \; 
 }
 
 for f in $(find ~/.rpt_profile/etc/sites -type f); do . $f; done

@@ -1,2 +1,3 @@
-alias ssh_seneca='ssh seneca.solumtech.com'
+alias sshseneca='ssh seneca.solumtech.com'
 alias sshfs_seneca='sshfs seneca.solumtech.com:/media/ /media/seneca/ -o idmap=user'
+alias cdsolum="cd $SOLUM_DIR"

@@ -16,6 +16,8 @@ if [ ! -f ~/.vimrc ]; then
     echo "source ~/.rpt_profile/etc/vimrc" >> ~/.vimrc
 fi
 
-source ~/.bashrc
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi;
 
 

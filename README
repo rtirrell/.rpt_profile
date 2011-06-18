@@ -1,5 +1,6 @@
 wget https://github.com/rtirrell/.rpt_profile/tarball/master
 tar -xzf master 
-mv *.rpt_profile* .rpt_profile
-
-sh .rpt_profile/setup.sh
+mv -f *.rpt_profile* .rpt_profile
+chmod +x .rpt_profile/setup.sh
+.rpt_profile/setup.sh
+rm -f master

@@ -21,4 +21,4 @@ svnupall() {
 
 for f in $(find ~/.rpt_profile/etc/sites -type f); do . $f; done
 
-. ~/.rpt_profile/etc/bash_aliases
+source ~/.rpt_profile/etc/bash_aliases

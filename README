@@ -3,4 +3,4 @@ tar -xzf master
 mv -f *.rpt_profile* .rpt_profile
 chmod +x .rpt_profile/setup.sh
 .rpt_profile/setup.sh
-rm -f master
+rm -f master*

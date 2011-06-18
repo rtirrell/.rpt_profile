@@ -13,8 +13,7 @@ echo "set keymap vi" >> ~/.inputrc
 echo "source $HOME/.rpt_profile/etc/screenrc" > ~/.screenrc
 echo "source ~/.rpt_profile/etc/vimrc" > ~/.vimrc
 
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi
+# Test executes in subshell, just try it.
+source ~/.bashrc
 
 

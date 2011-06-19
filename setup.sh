@@ -14,6 +14,4 @@ echo "source $HOME/.rpt_profile/etc/screenrc" > ~/.screenrc
 echo "source ~/.rpt_profile/etc/vimrc" > ~/.vimrc
 
 # Test executes in subshell, just try it.
-source ~/.bashrc
-
 

@@ -1,4 +1,3 @@
-" Toggle highlighting of search terms.
 syn on
 colorscheme default
 command! W w
@@ -16,7 +15,6 @@ set showcmd
 set showtabline=4
 set smartindent
 set softtabstop=4
-set spell
 set sw=4
 set ts=4
 set autoread

@@ -16,7 +16,11 @@ rmsvn() {
 }
 
 svnupall() {
-    find . -type d -depth 1 -exec svn up {} \; 
+    find . -maxdepth 1 -type d -exec svn up {} \; 
+}
+
+svnstall() {
+    find . -maxdepth 1 -type d -exec svn st {} \;
 }
 
 for f in $(find ~/.rpt_profile/etc/sites -type f); do . $f; done

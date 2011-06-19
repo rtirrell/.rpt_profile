@@ -1,0 +1,23 @@
+sethost() {
+    echo $1 > ~/.ec2_host
+}
+
+gethost() {
+    cat ~/.ec2_host
+}
+
+setinstance() {
+    echo $1 > ~/.ec2_instance
+}
+
+getinstance() {
+    cat ~/.ec2_instance
+}
+
+setvolume() {
+    echo $1 > ~/.ec2_volume
+}
+
+getvolume() {
+    cat ~/.ec2_volume
+}

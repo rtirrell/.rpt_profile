@@ -1,4 +1,11 @@
 alias sshseneca='ssh seneca.solumtech.com'
+
 alias sshfs_seneca='sshfs seneca.solumtech.com:/media/ /media/seneca/ -o idmap=user'
+
 alias cdsolum="cd $SOLUM_DIR"
+
 alias sshubuntu="ssh -i $EC2_KEYPAIR_FILEPATH ubuntu@$EC2_HOST"
+
+function sshfs_ec2 {
+    sshfs $1:/home/solum .sshfs/ec2 -o idmap=user,reconnect
+}

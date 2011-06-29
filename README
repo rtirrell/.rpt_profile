@@ -1,6 +1,12 @@
-wget https://raw.github.com/rtirrell/.rpt_profile/master/setup.sh
-chmod +x setup.sh
-./setup.sh
-rm setup.sh
+cd
+wget https://github.com/rtirrell/.rpt_profile/tarball/master
+
+tar -xzf rtirrell*
+mv rtirrell .rpt_profile
+rm rtirrell*
+
+chmod +x .rpt_profile/setup.sh
+./.rpt_profile/setup.sh
+
 source ~/.bashrc
 

@@ -4,8 +4,6 @@ wget https://github.com/rtirrell/.rpt_profile/tarball/master
 tar -xzf master 
 
 mv -f *.rpt_profile* .rpt_profile
-chmod +x .rpt_profile/setup.sh
-.rpt_profile/setup.sh
 
 if [ ! -f ~/.bashrc ]; then
     echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
@@ -21,5 +19,4 @@ echo "set keymap vi" >> ~/.inputrc
 echo "source $HOME/.rpt_profile/etc/screenrc" > ~/.screenrc
 echo "source ~/.rpt_profile/etc/vimrc" > ~/.vimrc
 
-# Test executes in subshell, just try it.
 

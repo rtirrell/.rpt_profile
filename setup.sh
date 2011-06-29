@@ -1,4 +1,12 @@
 #!/bin/bash
+cd
+wget https://github.com/rtirrell/.rpt_profile/tarball/master
+tar -xzf master 
+
+mv -f *.rpt_profile* .rpt_profile
+chmod +x .rpt_profile/setup.sh
+.rpt_profile/setup.sh
+
 if [ ! -f ~/.bashrc ]; then
     echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
 else 

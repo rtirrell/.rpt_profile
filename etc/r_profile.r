@@ -76,6 +76,10 @@ properize <- function(value) {
   capitalize(under_space(value))
 }
 
+filenamize <- function(value) {
+    tolower(space_under(value))
+}
+
 # Format a tuple, e.g. for use with the IN operator in SQL.
 format_tuple <- function(values) {
   if (is.character(values)) 

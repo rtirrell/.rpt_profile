@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xml>
+    <shiftwidth>4</shiftwidth>
+    <vimcursor>true</vimcursor>
+    <ignorecase>true</ignorecase>
+    <smartcase>true</smartcase>
+    <expandtab>true</expandtab>
+    <hlsearch>true</hlsearch>
+    <incsearch>true</incsearch>
+    <undolevels>1000</undolevels>
+    <copytoclipboard>false</copytoclipboard>
+    <wordseparators>_,.,(,), ,TAB,ENTER,:,;,?,+,=,ANGLE_BRACKET_RIGHT,ANGLE_BRACKET_LEFT,*,{,},",|,COMMA,-,\,/,@,[,],},~,!,#,$,%,^,',`,�,AND</wordseparators>
+	<vim>C:\Vim\vim72\gvim.exe</vim>
+	<vimargs>--remote-tab-silent</vimargs>
+</xml>

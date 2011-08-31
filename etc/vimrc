@@ -1,32 +1,46 @@
 syn on
 colorscheme default
+" :W also saves.
 command! W w
 
 set autoindent
 set autoread
 set encoding=utf-8
-set expandtab " Soft tab.
+" Soft tab.
+set expandtab 
 set hlsearch
 set ignorecase
+set smartcase
 set incsearch
-set number  " Show lines to left of buffer.
-set ruler " Show line and column in status area.
+" Show lines to left of buffer.
+set number  
+" Show line and column in status area.
+set ruler 
 set showcmd
+
+" Tab-related settings.
 set showtabline=4
 set smartindent
 set softtabstop=4
 set sw=4
 set ts=4
+
 set autoread
 
 set wildmode=longest,list,full
 set wildmenu
 
-set nocompatible " We're running Vim, not Vi!
-filetype on " Enable filetype detection.
-filetype indent on " Enable filetype-specific indenting.
-filetype plugin on " Enable filetype-specific plugins.
-
-nnoremap ; :set invhlsearch<CR>
+" We're running Vim, not Vi!
+set nocompatible 
+" Enable filetype detection.
+filetype on 
+" Enable filetype-specific indenting.
+filetype indent on 
+" Enable filetype-specific plugins.
+filetype plugin on 
+" No more shift!
+nore ; :
 " Consider _ to be a word separator.
 set iskeyword-=_
+
+

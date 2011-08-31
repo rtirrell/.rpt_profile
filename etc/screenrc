@@ -20,7 +20,8 @@ register [ "\033:se paste\015a"
 register ] "\033:se nopaste\015a"
 
 # Start a few.
+screen -t bash0 0
 screen -t bash1 1 
-screen -t bash2 2 
+screen -t bash2 2
 
 termcapinfo xterm* ti@:te@

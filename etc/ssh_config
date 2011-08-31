@@ -1,0 +1,9 @@
+ServerAliveCountMax 3
+ServerAliveInterval 10
+
+# Enable connection sharing.
+ControlMaster auto
+ControlPath /tmp/ssh_mux_%h_%p_%r
+
+# Enable persistent connections.
+ControlPersist 4h

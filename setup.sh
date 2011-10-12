@@ -9,7 +9,7 @@ else
 fi
 
 for fn in inputrc screenrc vimrc pylintrc; do 
-    mv ~/.rpt_profile/etc/$fn ~/.$fn
-done;
+    cp ~/.rpt_profile/etc/$fn ~/.$fn
+done
 
 

@@ -1,0 +1,16 @@
+set editing-mode vi
+set keymap vi
+
+# Ignore case in tab completion.
+# Doesn't seem to work on Macs.
+set completion-ignore-case on
+
+# Omit common prefix in tab completion.
+set completion-prefix-display-length 2
+
+# Completions will display immediately.
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Treat a key and it's shifted cousin (e.g. '-' and '_') as identical.
+set completion-map-case on

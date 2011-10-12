@@ -1,0 +1,13 @@
+[MESSAGES CONTROL]
+# W0142: * or ** magic
+# W0201: attribute outside init
+# W0703: except Exception
+# W0613: unused argument
+# W0511: TODO
+# W0404: reimport (usually false flag)
+# E1002: suer with old-style class.
+# W0232: class has no __init__
+# E1101: class has no member. Unfortunately, often spurious.
+# E1120: no parameter cls in function call (this probably can be removed
+#        from the exclude list).
+disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1101,E1120

@@ -32,6 +32,5 @@ svnstall() {
 }
 
 
-for f in $(find ~/.rpt_profile/etc/sites -type f); do . $f; done
-
+for f in $(find ~/.rpt_profile/etc/sites -type f); do source $f; done
 source ~/.rpt_profile/etc/bash_aliases.sh

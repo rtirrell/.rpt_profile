@@ -4,7 +4,7 @@ if [[ ! -f ~/.bashrc ]]; then
     echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
 else 
     if [[ $(grep .rpt_profile ~/.bashrc | wc -l ) -eq 0 ]]; then
-        echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
+        echo "source ~/.rpt_profile/etc/bashrc.sh" >> ~/.bashrc
     fi
 fi
 

@@ -9,5 +9,3 @@ chmod +x .rpt_profile/setup.sh
 ./.rpt_profile/setup.sh
 
 source ~/.bashrc
-
-TODO: add viplugin config, pylintrc

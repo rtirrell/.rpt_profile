@@ -3,11 +3,8 @@ colorscheme default
 " :W also saves.
 command! W w
 
-set autoindent
 set autoread
 set encoding=utf-8
-" Soft tab.
-set expandtab 
 set hlsearch
 set ignorecase
 set smartcase
@@ -18,10 +15,18 @@ set number
 set ruler 
 set showcmd
 
+
+"""
 " Tab-related settings.
+"""
+"set autoindent
+" Smart indenting behavior.
+filetype indent on
+" Soft tab.
+set expandtab 
 set showtabline=4
-set smartindent
 set softtabstop=4
+" Shift indents 4 spaces.
 set sw=4
 set ts=4
 
@@ -30,7 +35,7 @@ set autoread
 set wildmode=longest,list,full
 set wildmenu
 
-" We're running Vim, not Vi!
+" We're running vim, not vi.
 set nocompatible 
 " Enable filetype detection.
 filetype on 
@@ -38,9 +43,18 @@ filetype on
 filetype indent on 
 " Enable filetype-specific plugins.
 filetype plugin on 
+
 " No more shift!
 nore ; :
-" Consider _ to be a word separator.
+
+" Consider '_' a word separator.
 set iskeyword-=_
 
 
+"""
+" Filetype-specific stuff.
+"""
+
+" Clojure.
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1

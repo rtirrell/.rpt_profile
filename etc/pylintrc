@@ -10,4 +10,9 @@
 # E1101: class has no member. Unfortunately, often spurious.
 # E1120: no parameter cls in function call (this probably can be removed
 #        from the exclude list).
-disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1101,E1120
+# E1103: has no member ... (but some types could not be inferred).
+#        Causes annoying problems in using django test client, response has
+#        no attribute 'status_code'.
+# W0621: rebinding name from outer scope
+# W0622: redefining builtin.
+disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1101,E1120,E1103,W0621,W0622

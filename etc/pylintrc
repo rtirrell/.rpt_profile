@@ -15,4 +15,5 @@
 #        no attribute 'status_code'.
 # W0621: rebinding name from outer scope
 # W0622: redefining builtin.
-disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1101,E1120,E1103,W0621,W0622
+# W0614: unused import from wildcard.
+disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1101,E1120,E1103,W0621,W0622,W0614

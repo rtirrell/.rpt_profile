@@ -50,18 +50,8 @@ nore ; :
 " Consider '_' a word separator.
 set iskeyword-=_
 
-
-"""
-" Filetype-specific stuff.
-"""
-
-" Clojure.
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-
-"Informative status line
+" Informative status line
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]\ Col:%c
-
 
 " Backups
 set backupdir=~/.vim/tmp/backup/ " backups
@@ -77,3 +67,13 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <leader>w <C-w>v<C-w>l
+
+
+"""
+" Filetype-specific stuff.
+"""
+
+" Clojure.
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1
+

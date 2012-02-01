@@ -13,31 +13,31 @@ s() {
 }
 
 # grep, ignoring anything in .svn.
-grepws() {
+grep-ws() {
     grep -Ir $1 $2 | grep -v .svn
 }
 
 # rm all .svn dirs.
-rm_svn() {
+rm-svn() {
     find . -name ".svn" -type d -exec rm -rf {} \;
 }
 
 # Do something to all directories immediately in the current one.
-do_children() {
+do-children() {
     find . -maxdepth 1 -mindepth 1 -type d -exec $1 {} \;
 }
 
-svnupall() {
-    do_children 'svn up'
+svn-up-all() {
+    do-children 'svn up'
 }
 
-svnstall() {
-    do_children 'svn st'
+svn-st-all() {
+    do-children 'svn st'
 }
 
 
 for f in $(find ~/.rpt_profile/etc/sites -type f); do source $f; done
-source ~/.rpt_profile/etc/bash_aliases.sh
+source ~/.rpt_profile/etc/bash_aliases
 
 # Use bash completion on Macports. Should already be installed on Linux.
 if [ -f /opt/local/etc/bash_completion ]; then

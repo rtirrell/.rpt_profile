@@ -1,0 +1,43 @@
+set guioptions=aAce
+colorscheme molokai
+set guifont=Consolas:h14
+
+" Standard 4-character tabs and shifts.
+set sw=4
+set ts=4
+
+" Complete like Bash, plus full.
+" First tab completes as much as possible, second provides a list, and the
+" third cycles through completions.
+set wildmode=longest,list,full
+
+" Override Janus' display of extraneous whitespace - restore this
+" setting to the default.
+set listchars=
+
+" :W also saves.
+command! W w
+
+" Kill buffer without closing a split.
+" Switch to alternative buffer, kill original buffer.
+noremap <leader>d :b#<bar>bd#<CR>
+
+" Use useless ; as :, save a shift.
+noremap ; :
+
+" Automatically re-read modified files.
+set autoread
+
+" Automatically write files whenever switching to another buffer, as well as
+" for a few other triggers.
+set autowrite
+
+" Regular text width is 80 chars, display a margin at 90.
+set textwidth=80
+set colorcolumn=90
+
+" Ignore these files in wildcard matching, such as command-T uses.
+set wildignore+=*.py[oc],.svn,.git
+
+" Consider '_' a word ending.
+set iskeyword-=_

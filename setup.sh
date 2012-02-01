@@ -18,6 +18,7 @@ for fn in bashrc inputrc screenrc pylintrc vimrc.before vimrc.after; do
         fi
     else
         ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
+    fi
 done
 
 

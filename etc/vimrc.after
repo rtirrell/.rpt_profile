@@ -41,3 +41,19 @@ set wildignore+=*.py[oc],.svn,.git
 
 " Consider '_' a word ending.
 set iskeyword-=_
+
+" Informative status line.
+statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]\ Col:%c
+
+" Backups
+" set backupdir=~/.vim/tmp/backup/ " backups
+" set directory=~/.vim/tmp/swap/   " swap files
+" set backup                       " enable backups
+
+" Easy buffer navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" Not sure what this one does.
+" map <leader>w <C-w>v<C-w>l

@@ -1,4 +1,5 @@
 alias sshseneca='ssh seneca.solumtech.com'
 alias sshfs_rpt="sshfs rpt.solumtech.com:/home/solum ~/rpt -o idmap=user"
+
 export DJANGO_SETTINGS_MODULE=WEB.settings
-export FLAVOR=test
+export FLAVOR=development

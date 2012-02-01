@@ -1,15 +1,18 @@
 #!/bin/bash
-# Also add to bash profile.
-if [[ ! -f ~/.bashrc ]]; then
-    echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
-else 
-    if [[ $(grep .rpt_profile ~/.bashrc | wc -l ) -eq 0 ]]; then
-        echo "source ~/.rpt_profile/etc/bashrc.sh" >> ~/.bashrc
-    fi
-fi
+cd
+wget https://github.com/rtirrell/.rpt_profile/tarball/master
 
-for fn in inputrc screenrc vimrc pylintrc; do 
-    cp ~/.rpt_profile/etc/$fn ~/.$fn
+tar -xzf master
+rm -fr master
+mv rtirrell* .rpt_profile
+
+for fn in bashrc inputrc screenrc pylintrc vimrc.before vimrc.after; do 
+    if [[ -f ~/.$fn ]]; then
+        echo "File $fn already exists."
+    elif [[ -f ~/.rpt_profile/etc/$fn ]]; then
+        ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
+    fi
 done
 
 
+source ~/.bashrc

@@ -1,3 +1,9 @@
+# Look into https://github.com/kmmbvnr/django-jenkins/blob/master/django_jenkins/tasks/pylint.rc
+[MASTER]
+# Ignore any basename.
+ignore=migrations
+
+
 [MESSAGES CONTROL]
 # W0142: * or ** magic
 # W0201: attribute outside init
@@ -5,15 +11,31 @@
 # W0613: unused argument
 # W0511: TODO
 # W0404: reimport (usually false flag)
-# E1002: suer with old-style class.
+# E1002: super with old-style class.
 # W0232: class has no __init__
-# E1101: class has no member. Unfortunately, often spurious.
+# E1101: class has no member. Unfortunately, often spurious. (NOT USING)
 # E1120: no parameter cls in function call (this probably can be removed
-#        from the exclude list).
+#        from the exclude list). This often happens in as_view in URLconfs.
 # E1103: has no member ... (but some types could not be inferred).
 #        Causes annoying problems in using django test client, response has
 #        no attribute 'status_code'.
 # W0621: rebinding name from outer scope
 # W0622: redefining builtin.
 # W0614: unused import from wildcard.
-disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1101,E1120,E1103,W0621,W0622,W0614
+# W0401: wildcard import.
+# W0212: access to a protected member.
+disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1120,E1103,W0621,W0622,W0614,W0401,W0212
+
+[TYPECHECK]
+# Will not warn about class not having a member. 
+#
+# settings is a concession to classes in ACQ, request and kwargs to Django's
+# class-based generic views, plus other code in ACQ that relies on controllers
+# being setattr()ed on instances, and then user_profile isn't set right either.
+#
+# Had to fix the lexer by hand to force it to accept the regexp correctly.
+generated-members=objects,DoesNotExist,id,pk,_meta,base_fields,context,get,settings,request,kwargs,daq_super,rfid,plate,instrument,stage,chamber,motor,user_profile,[A-Za-z]+_set,prototype_name,parent,x,y,balance,workflow,code,qualified_name,lower
+
+# We can define methods here and it's okay.
+defining-attr-methods=__init__,__new__,setUp
+

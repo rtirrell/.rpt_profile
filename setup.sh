@@ -3,7 +3,8 @@ cd
 wget https://github.com/rtirrell/.rpt_profile/tarball/master
 
 tar -xzf master
-rm -fr master 
+rm -fr master
+rm -fr .rpt_profile
 mv rtirrell* .rpt_profile
 
 for fn in bashrc inputrc screenrc pylintrc vimrc.before vimrc.after; do 

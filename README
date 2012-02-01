@@ -1,1 +1,1 @@
-curl -Lo- https://github.com/rtirrell/.rpt_profile/setup.sh/raw | bash
+curl -Lo- https://raw.github.com/rtirrell/.rpt_profile/master/setup.sh | bash

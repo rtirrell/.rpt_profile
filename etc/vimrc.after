@@ -42,9 +42,6 @@ set wildignore+=*.py[oc],.svn,.git
 " Consider '_' a word ending.
 set iskeyword-=_
 
-" Informative status line.
-statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]\ Col:%c
-
 " Backups
 " set backupdir=~/.vim/tmp/backup/ " backups
 " set directory=~/.vim/tmp/swap/   " swap files

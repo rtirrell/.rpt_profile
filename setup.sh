@@ -13,11 +13,11 @@ for fn in bashrc inputrc screenrc pylintrc vimrc.before vimrc.after; do
             if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
                 echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
             fi
-        elif [[ -f ~/.rpt_profile/etc/$fn ]]; then
-            echo "Copying $f..."
+        else
             ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
         fi
-    fi
+    else
+        ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
 done
 
 

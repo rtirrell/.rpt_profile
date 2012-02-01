@@ -9,6 +9,11 @@ mv rtirrell* .rpt_profile
 for fn in bashrc inputrc screenrc pylintrc vimrc.before vimrc.after; do 
     if [[ -f ~/.$fn ]]; then
         echo "File $fn already exists."
+        if [[ $f == bashrc ]]; then
+            if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
+                echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
+            fi
+        fi
     elif [[ -f ~/.rpt_profile/etc/$fn ]]; then
         ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
     fi

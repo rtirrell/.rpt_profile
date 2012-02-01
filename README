@@ -1,11 +1,1 @@
-cd
-wget https://github.com/rtirrell/.rpt_profile/tarball/master
-
-tar -xzf master
-rm -fr master
-mv rtirrell* .rpt_profile
-
-chmod +x .rpt_profile/setup.sh
-./.rpt_profile/setup.sh
-
-source ~/.bashrc
+curl -Lo- https://github.com/rtirrell/.rpt_profile/setup.sh/raw | bash

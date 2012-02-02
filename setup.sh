@@ -1,7 +1,6 @@
 #!/bin/bash
 cd
-wget https://github.com/rtirrell/.rpt_profile/tarball/master
-
+wget --no-check-certificate https://github.com/rtirrell/.rpt_profile/tarball/master
 tar -xzf master
 rm -fr master
 rm -fr .rpt_profile

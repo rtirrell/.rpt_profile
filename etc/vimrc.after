@@ -59,3 +59,6 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Not sure what this one does.
 " map <leader>w <C-w>v<C-w>l
+
+" Keep splits at the same sizes.
+autocmd VimResized * wincmd =

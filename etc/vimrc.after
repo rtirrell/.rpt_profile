@@ -64,5 +64,7 @@ set nobackup
 set nowritebackup
 
 " Doesn't work...
-set runtimepath+=/Users/rpt/.vim/vimclojure/
+"set runtimepath+=/Users/rpt/.vim/vimclojure/
 
+" Keep splits at the same sizes.
+autocmd VimResized * wincmd =

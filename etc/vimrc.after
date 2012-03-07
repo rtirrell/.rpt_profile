@@ -16,8 +16,7 @@ set ts=4
 " third cycles through completions.
 set wildmode=longest,list,full
 
-" Override Janus' display of extraneous whitespace - restore this
-" setting to the default.
+" Override Janus' display of extraneous whitespace.
 set listchars=
 
 " :W also saves.
@@ -59,3 +58,11 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Not sure what this one does.
 " map <leader>w <C-w>v<C-w>l
+
+" I hate backups.
+set nobackup
+set nowritebackup
+
+" Doesn't work...
+set runtimepath+=/Users/rpt/.vim/vimclojure/
+

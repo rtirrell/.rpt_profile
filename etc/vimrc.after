@@ -62,6 +62,8 @@ map <C-l> <C-w>l
 " I hate backups.
 set nobackup
 set nowritebackup
+" Swap directory.
+set directory=.,$TEMP
 
 " Doesn't work...
 "set runtimepath+=/Users/rpt/.vim/vimclojure/

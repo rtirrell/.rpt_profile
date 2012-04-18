@@ -1,3 +1,8 @@
+# Bring in other files.
+for f in $(find ~/.rpt_profile/etc/sites -type f); do source $f; done
+source ~/.rpt_profile/etc/bash_aliases
+source ~/.rpt_profile/etc/inputrc
+
 set -o vi
 export EDITOR="vim"
 export PS1="[\[\e[28;1m\]\h \[\e[0m\]\W]\$ "
@@ -9,7 +14,7 @@ s() {
     screen -SDR $(basename $(pwd))
   else
     screen -SDR $1
-  fi;
+  fi
 }
 
 # grep, ignoring anything in .svn.
@@ -28,16 +33,13 @@ do-children() {
 }
 
 svn-up-all() {
-    do-children 'svn up'
+    do-children "svn up"
 }
 
 svn-st-all() {
-    do-children 'svn st'
+    do-children "svn st"
 }
 
-
-for f in $(find ~/.rpt_profile/etc/sites -type f); do source $f; done
-source ~/.rpt_profile/etc/bash_aliases
 
 # Use bash completion on Macports. Should already be installed on Linux.
 if [ -f /opt/local/etc/bash_completion ]; then

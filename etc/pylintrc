@@ -8,6 +8,7 @@ ignore=migrations
 # W0142: * or ** magic
 # W0201: attribute outside init
 # W0703: except Exception
+# W0105: String statement has no effect.
 # W0613: unused argument
 # W0511: TODO
 # W0404: reimport (usually false flag)
@@ -24,7 +25,7 @@ ignore=migrations
 # W0614: unused import from wildcard.
 # W0401: wildcard import.
 # W0212: access to a protected member.
-disable=W0142,W0201,W0703,W0613,W0511,W0404,E1002,W0232,E1120,E1103,W0621,W0622,W0614,W0401,W0212
+disable=W0142,W0201,W0703,W0105,W0613,W0511,W0404,E1002,W0232,E1120,E1103,W0621,W0622,W0614,W0401,W0212
 
 [TYPECHECK]
 # Will not warn about class not having a member. 

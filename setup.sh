@@ -4,22 +4,18 @@ wget --no-check-certificate https://github.com/rtirrell/.rpt_profile/tarball/mas
 tar -xzf master
 rm -fr master
 rm -fr .rpt_profile
+# Named by username, plus repo name and a bunch of junk.
 mv rtirrell* .rpt_profile
 
-for fn in bashrc inputrc screenrc pylintrc vimrc.before vimrc.after; do 
-    if [[ -f ~/.$fn ]]; then
-        echo "File $fn already exists."
-        if [[ $f == bashrc ]]; then
-            if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
-                echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
-            fi
-        else
-            ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
-        fi
-    else
-        ln -sf ~/.rpt_profile/etc/$fn ~/.$fn
-    fi
+
+if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
+    echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
+fi
+
+filenames = inputrc screenrc pylintrc vimrc.before vimrc.after
+for filename in filenames; do
+    ln -sf ~/.rpt_profile/etc/$filename ~/.$filename
 done
 
-
+pip install --user flake8 pylint ipython
 source ~/.bashrc

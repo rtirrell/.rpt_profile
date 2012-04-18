@@ -17,8 +17,8 @@ if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
     echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
 fi
 
-filenames = "screenrc pylintrc vimrc.before vimrc.after"
-for filename in $filenames; do
+FILENAMES = "screenrc pylintrc vimrc.before vimrc.after"
+for filename in $FILENAMES; do
     ln -sf ~/.rpt_profile/etc/$filename ~/.$filename
 done
 

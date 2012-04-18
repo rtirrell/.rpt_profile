@@ -83,5 +83,8 @@ au FileType make set noexpandtab
 " E203: whitespace before :
 " E221: multiple spaces before operator (like parameter =)
 " E251: no space around parameter =
-" E302: expected 2 blank lines, found x.
-let g:syntastic_python_check_args="--ignore=W291,W293,E203,E221,E251,E302"
+" E302: expected 2 blank lines, found x
+" E303: too many blank lines
+let g:syntastic_python_checker_args="--ignore=W291,W293,E203,E221,E251,E302,E303"
+
+set history=1000

@@ -1,4 +1,9 @@
 #!/bin/bash
+if [[ $(hostname | grep dazzle) ]]; then
+    echo "Should not be run from dazzle, will kill local changes."
+    exit 1
+fi
+
 cd
 wget --no-check-certificate https://github.com/rtirrell/.rpt_profile/tarball/master
 tar -xzf master
@@ -12,7 +17,7 @@ if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
     echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
 fi
 
-filenames = inputrc screenrc pylintrc vimrc.before vimrc.after
+filenames = "screenrc pylintrc vimrc.before vimrc.after"
 for filename in filenames; do
     ln -sf ~/.rpt_profile/etc/$filename ~/.$filename
 done

@@ -13,7 +13,7 @@ rm -fr .rpt_profile
 mv rtirrell* .rpt_profile
 
 
-if [[ $(grep .rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
+if [[ $(grep rpt_profile ~/.bashrc | wc -l) == 0 ]]; then
     echo "source ~/.rpt_profile/etc/bashrc" >> ~/.bashrc
 fi
 
@@ -24,3 +24,7 @@ done
 
 pip install --user flake8 pylint ipython
 source ~/.bashrc
+
+if [[ -f ~/.vim/Rakefile ]]; then
+    cd ~/.vim && rake
+fi

@@ -73,7 +73,8 @@ autocmd VimResized * wincmd =
 " http://thejacklawson.com/2011/12/vim-cant-open-errofile/index.html
 set shell=sh
 
-au FileType html setl sw=2 sts=2
+au FileType html setl sw=2 sts=2 ts=2
+au FileType javascript setl sw=2 sts=2 ts=2
 
 " Make hates expandtab. It wants real tabs.
 au FileType make set noexpandtab

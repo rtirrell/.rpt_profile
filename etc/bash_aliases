@@ -1,4 +1,12 @@
 alias rm='rm -i'
-alias a='ls -lpG'
+
+if [[ $(uname) == 'Linux' ]]; then
+    alias a='ls -lp --color=auto'
+else
+    alias a='ls -lpG'
+fi
+
+alias info='info --vi-keys'
+
 alias sst='svn st'
 

@@ -42,8 +42,8 @@ svn-st-all() {
 
 
 # Use bash completion on Macports. Should already be installed on Linux.
-if [ -f /opt/local/etc/bash_completion ]; then
-    source /opt/local/etc/bash_completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 else
     if [[ `uname` == "Darwin" ]]; then
         echo "bash-completion is not installed!"

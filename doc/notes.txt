@@ -1,1 +1,0 @@
-Use singular forms when possible.

@@ -5,7 +5,7 @@ source ~/.rpt_profile/etc/inputrc
 
 set -o vi
 export EDITOR="vim"
-export PS1="[\[\e[28;1m\]\h \[\e[0m\]\W]\$ "
+export PS1="[\[\e[32;1m\]\u@\[\e[28;1m\]\h \[\e[0m\]\W]\$ "\
 
 # Launch screen.
 s() {

@@ -43,6 +43,9 @@ set autowrite
 set textwidth=80
 set colorcolumn=90
 
+" Underline line
+set cursorline
+
 " Ignore these files in wildcard matching, such as command-T uses.
 set wildignore+=*.py[oc],.svn,.git
 

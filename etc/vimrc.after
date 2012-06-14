@@ -11,6 +11,9 @@ endif
 set sw=4
 set ts=4
 
+" I hate audible bells.
+set vb
+
 " Complete like Bash, plus full.
 " First tab completes as much as possible, second provides a list, and the
 " third cycles through completions.
@@ -64,6 +67,7 @@ map <C-l> <C-w>l
 """
 set nobackup
 set nowritebackup
+
 " Swap directory.
 set directory=.,$TEMP
 

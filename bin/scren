@@ -1,0 +1,6 @@
+if [[ -d $1 ]]; then
+    cd $1
+    screen -SDR `basename $(pwd)`
+else
+    screen -SDR $1
+fi

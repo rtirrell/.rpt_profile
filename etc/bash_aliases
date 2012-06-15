@@ -1,12 +1,11 @@
 alias rm='rm -i'
+alias info='info --vi-keys'
+alias st='svn st'
+alias grep-exclude-svn='egrep --exclude-dir="*svn*"'
 
 if [[ $(uname) == 'Linux' ]]; then
     alias a='ls -lp --color=auto'
 else
     alias a='ls -lpG'
 fi
-
-alias info='info --vi-keys'
-
-alias sst='svn st'
 

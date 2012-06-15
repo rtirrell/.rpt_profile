@@ -1,51 +1,18 @@
-# Bring in other files.
-for f in $(find ~/.rpt_profile/etc/sites -type f); do source $f; done
+# Source site files.
+for f in `find ~/.rpt_profile/etc/sites -type f`; do 
+    source $f
+done
+
 source ~/.rpt_profile/etc/bash_aliases
+source ~/.rpt_profile/etc/exports
 source ~/.rpt_profile/etc/inputrc
 
-set -o vi
-export EDITOR="vim"
-export PS1="[\[\e[32;1m\]\u@\[\e[28;1m\]\h \[\e[0m\]\W]\$ "\
 
-# Launch screen.
-s() {
-  if [[ -d $1 ]]; then
-    cd $1
-    screen -SDR $(basename $(pwd))
-  else
-    screen -SDR $1
-  fi
-}
-
-# grep, ignoring anything in .svn.
-grep-ws() {
-    grep -Ir $1 $2 | grep -v .svn
-}
-
-# rm all .svn dirs.
-rm-svn() {
-    find . -name ".svn" -type d -exec rm -rf {} \;
-}
-
-# Do something to all directories immediately in the current one.
-do-children() {
-    find . -maxdepth 1 -mindepth 1 -type d -exec $1 {} \;
-}
-
-svn-up-all() {
-    do-children "svn up"
-}
-
-svn-st-all() {
-    do-children "svn st"
-}
-
-
-# Use bash completion on Macports. Should already be installed on Linux.
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-else
-    if [[ `uname` == "Darwin" ]]; then
+# Use bash completion on Darwin. Should already be installed on Linux.
+if [[ `uname` == 'Darwin' ]]; then
+    if [[ -f `brew --prefix`/etc/bash_completion ]]; then
+        source `brew --prefix`/etc/bash_completion
+    else
         echo "bash-completion is not installed!"
     fi
 fi

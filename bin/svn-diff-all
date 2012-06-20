@@ -3,7 +3,7 @@
 from paver.easy import *
 from bin import do_children_if_svn
 
-def svn_up(d):
-    sh('svn up %s' % d)
+def svn_diff(d):
+    sh('svn diff %s' % d)
 
-do_children_if_svn(svn_up)
+do_children_if_svn(svn_diff)

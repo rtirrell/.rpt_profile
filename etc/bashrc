@@ -9,10 +9,7 @@ source ~/.rpt_profile/etc/inputrc
 
 
 # Use bash completion on Darwin. Should already be installed on Linux.
-if [[ `uname` == 'Darwin' ]]; then
-    if [[ -f `brew --prefix`/etc/bash_completion ]]; then
-        source `brew --prefix`/etc/bash_completion
-    else
-        echo "bash-completion is not installed!"
-    fi
+if [[ `uname` == 'Darwin' && 
+      $(which brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
+        source $(brew --prefix)/etc/bash_completion
 fi

@@ -9,7 +9,8 @@ source ~/.rpt_profile/etc/inputrc
 
 
 # Use bash completion on Darwin. Should already be installed on Linux.
-if [[ `uname` == 'Darwin' && 
-      $(which brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
-        source $(brew --prefix)/etc/bash_completion
-fi
+# Getting segfault!
+#if [[ `uname` == 'Darwin' && 
+#      $(which brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
+#        source $(brew --prefix)/etc/bash_completion
+#fi

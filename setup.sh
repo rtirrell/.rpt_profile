@@ -1,10 +1,11 @@
 #!/bin/bash
+
+cd ~rpt
+
 if [[ $(hostname | grep dazzle) && ! $FORCE_SETUP ]]; then
     echo "Should not be run from dazzle, will kill local changes."
     exit 1
 fi
-
-cd
 
 if [[ -f .rpt_profile ]]; then
     mv .rpt_profile .rpt_profile.bak

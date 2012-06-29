@@ -1,18 +1,5 @@
 set -o vi
-set editing-mode vi
+#set editing-mode vi
 # This causes some weirdness where hitting 'b' in command mode while
 # at bash prompt inserted some fragment of set completion-ignore-case on.
-#set keymap vi
-
-# Ignore case in tab completion.
-bind 'set completion-ignore-case on'
-
-# Omit common prefix in tab completion.
-bind 'set completion-prefix-display-length 2'
-
-# Completions will display immediately.
-bind 'set show-all-if-ambiguous on'
-bind 'set show-all-if-unmodified on'
-
-# Treat a key and it's shifted cousin (e.g. '-' and '_') as identical.
-bind 'set completion-map-case on'
+set keymap vi

@@ -14,3 +14,16 @@ source ~/.rpt_profile/etc/inputrc
 #      $(which brew) && -f $(brew --prefix)/etc/bash_completion ]]; then
 #        source $(brew --prefix)/etc/bash_completion
 #fi
+
+# Ignore case in tab completion.
+bind 'set completion-ignore-case on'
+
+# Omit common prefix in tab completion.
+bind 'set completion-prefix-display-length 2'
+
+# Completions will display immediately.
+bind 'set show-all-if-ambiguous on'
+bind 'set show-all-if-unmodified on'
+
+# Treat a key and it's shifted cousin (e.g. '-' and '_') as identical.
+bind 'set completion-map-case on'

@@ -5,7 +5,10 @@ if [[ $(hostname | grep dazzle) && ! $FORCE_SETUP ]]; then
 fi
 
 cd
-mv .rpt_profile .rpt_profile.bak
+
+if [[ -f .rpt_profile ]]; then
+    mv .rpt_profile .rpt_profile.bak
+fi
 
 wget --no-check-certificate \
     https://github.com/rtirrell/.rpt_profile/tarball/master
@@ -15,5 +18,4 @@ rm -fr master
 
 # Named by username, plus repo name and a bunch of junk.
 mv rtirrell* .rpt_profile
-
-bash update.sh
+bash .rpt_profile/update.sh

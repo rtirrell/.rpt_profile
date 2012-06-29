@@ -19,4 +19,7 @@ rm -fr master
 
 # Named by username, plus repo name and a bunch of junk.
 mv rtirrell* .rpt_profile
+
+# rc files in place before installing Janus.
 bash .rpt_profile/update.sh
+curl -Lo- https://bit.ly/janus-bootstrap | bash

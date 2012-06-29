@@ -8,10 +8,9 @@ for filename in $filenames; do
 done
 
 pip install --user flake8 pylint ipython
-source .bashrc
-
-curl -Lo- https://bit.ly/janus-bootstrap | bash
 
 if [[ -f .vim/Rakefile ]]; then
     cd .vim && rake
 fi
+
+source .bashrc

@@ -4,14 +4,11 @@ fi
 
 filenames='screenrc pylintrc vimrc.before vimrc.after'
 for filename in $filenames; do
-    ln -sf rpt/.rpt_profile/etc/$filename ~rpt/.$filename
+    ln -sf ~rpt/.rpt_profile/etc/$filename ~rpt/.$filename
 done
 
-mkdir -p .byobu
-for f in $(ls .~rpt/rpt_profile/etc/byobu); do
-    echo $f
-    echo $f
-    echo $f
+mkdir -p ~/.byobu
+for f in $(ls .rpt/.rpt_profile/etc/byobu); do
     cp $f ~rpt/.byobu
 done
 

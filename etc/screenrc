@@ -1,29 +1,32 @@
-startup_message off
+#startup_message off
 
-defscrollback 10000
-# C-a " " as well as C-a """
-bind ' ' windowlist -b
+#defscrollback 10000
+## C-a " " as well as C-a """
+#bind ' ' windowlist -b
 
-# Support "alternative" screens, e.g., vim.
-altscreen on
-hardstatus alwayslastline
+## Support "alternative" screens, e.g., vim.
+#altscreen on
+#hardstatus alwayslastline
 
-# Caption for split screens.
-caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
+## Caption for split screens.
+#caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
 
-hardstatus alwayslastline
-# See http://www.gnu.org/software/screen/manual/html_node/String-Escapes.html#String-Escapes
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+#hardstatus alwayslastline
+## See http://www.gnu.org/software/screen/manual/html_node/String-Escapes.html#String-Escapes
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 
-# http://www.kuro5hin.org/story/2004/3/9/16838/14935
-register [ "\033:se paste\015a"
-register ] "\033:se nopaste\015a"
+## http://www.kuro5hin.org/story/2004/3/9/16838/14935
+#register [ "\033:se paste\015a"
+#register ] "\033:se nopaste\015a"
 
-# Start a few.
-screen -t bash0 0
-screen -t bash1 1 
-screen -t bash2 2
+## Start a few.
+#screen -t bash0 0
+#screen -t bash1 1 
+#screen -t bash2 2
 
-# Scroll with mousewheel / page up and down, doesn't work on remote sessions
-# or on iTerm.
-termcapinfo xterm* ti@:te@
+## Scroll with mousewheel / page up and down, doesn't work on remote sessions
+## or on iTerm.
+#termcapinfo xterm* ti@:te@
+
+# http://stackoverflow.com/questions/2068806/gnu-screen-can-you-automatically-name-a-window-after-the-last-invoked-program
+shelltitle "$ |bash"

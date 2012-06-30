@@ -1,5 +1,5 @@
 export EDITOR=vim
-export PS1='[\[\e[32;1m\]\u@\[\e[28;1m\]\h \[\e[0m\]\W]\$ '\
+export PS1='\[\033k\033\\\]'$PS1
 
 export PATH="$PATH:$HOME/.rpt_profile/bin"
 export PYTHONPATH="$PYTHONPATH:$HOME/.rpt_profile"

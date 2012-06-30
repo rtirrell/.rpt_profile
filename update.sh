@@ -1,21 +1,24 @@
-if [[ $(grep rpt_profile .bashrc | wc -l) == 0 ]]; then
-    echo 'source ~rpt/.rpt_profile/etc/bashrc' >> ~/.bashrc
+if [[ $(grep rpt_profile ~rpt/.bashrc | wc -l) == 0 ]]; then
+    echo 'source ~rpt/.rpt_profile/etc/bashrc' >> ~rpt/.bashrc
 fi
 
 filenames='screenrc pylintrc vimrc.before vimrc.after'
 for filename in $filenames; do
-    ln -sf .rpt_profile/etc/$filename .$filename
+    ln -sf rpt/.rpt_profile/etc/$filename ~rpt/.$filename
 done
 
 mkdir -p .byobu
-for f in $(ls .rpt_profile/etc/byobu); do
-    cp $f ~/.byobu
+for f in $(ls .~rpt/rpt_profile/etc/byobu); do
+    echo $f
+    echo $f
+    echo $f
+    cp $f ~rpt/.byobu
 done
 
 pip install --user flake8 pylint ipython
 
-if [[ -f .vim/Rakefile ]]; then
-    cd .vim && rake
+if [[ -f ~rpt/.vim/Rakefile ]]; then
+    cd ~rpt/.vim && rake
 fi
 
-source .bashrc
+source ~rpt/.bashrc

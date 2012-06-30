@@ -7,7 +7,7 @@ if [[ $(hostname | grep dazzle) && ! $FORCE_SETUP ]]; then
     exit 1
 fi
 
-if [[ -f .rpt_profile ]]; then
+if [[ -d ~rpt/.rpt_profile ]]; then
     mv .rpt_profile .rpt_profile.bak
 fi
 

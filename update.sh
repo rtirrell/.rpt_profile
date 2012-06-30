@@ -8,7 +8,7 @@ for filename in $filenames; do
 done
 
 mkdir -p ~/.byobu
-for f in $(ls .rpt/.rpt_profile/etc/byobu); do
+for f in $(ls ~rpt/.rpt_profile/etc/byobu); do
     cp $f ~rpt/.byobu
 done
 

@@ -8,7 +8,7 @@ for filename in $filenames; do
 done
 
 mkdir -p .byobu
-cp etc/byobu .byobu/status
+cp .rpt_profile/etc/byobu .byobu/status
 
 pip install --user flake8 pylint ipython
 

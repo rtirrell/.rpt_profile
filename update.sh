@@ -12,6 +12,11 @@ for f in $(find ~rpt/.rpt_profile/etc/byobu); do
     cp $f ~rpt/.byobu
 done
 
+if [[ -e /usr/bin/byobu-launcher-install ]]; then
+    byobu-launcher-install
+    byobu-ctrl-a screen
+fi
+
 pip install --user flake8 pylint ipython
 
 if [[ -f ~rpt/.vim/Rakefile ]]; then

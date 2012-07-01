@@ -20,6 +20,8 @@ set vb
 set wildmode=longest,list,full
 
 " Override Janus' display of extraneous whitespace.
+set list!
+" This didn't cut it.
 set listchars=
 
 " :W also saves.

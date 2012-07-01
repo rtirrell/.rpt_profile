@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+# Put all files in place. Run this on a dev machine.
+
 if [[ $(grep rpt_profile ~rpt/.bashrc | wc -l) == 0 ]]; then
     echo 'source ~rpt/.rpt_profile/etc/bashrc' >> ~rpt/.bashrc
 fi

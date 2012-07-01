@@ -1,9 +1,8 @@
 #!/bin/bash
+# Setup for use.
 
-cd ~rpt
-
-if [[ $(hostname | grep dazzle) && ! $FORCE_SETUP ]]; then
-    echo "Should not be run from dazzle, will kill local changes."
+if [[ -e ~rpt/.rpt_profile/.git ]]; then
+    echo "Should not be run on a system with a repository."
     exit 1
 fi
 
@@ -22,4 +21,4 @@ rm -fr master
 mv rtirrell* ~rpt/.rpt_profile
 
 curl -Lo- https://bit.ly/janus-bootstrap | bash
-bash ~rpt/.rpt_profile/update.sh
+~rpt/.rpt_profile/install.sh

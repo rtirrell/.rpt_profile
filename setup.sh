@@ -9,7 +9,7 @@ fi
 
 if [[ -d ~rpt/.rpt_profile ]]; then
     rm -fr ~rpt/.rpt_profile.bak
-    mv ~/rpt/.rpt_profile ~/rpt/.rpt_profile.bak
+    mv ~rpt/.rpt_profile ~rpt/.rpt_profile.bak
 fi
 
 wget --no-check-certificate \

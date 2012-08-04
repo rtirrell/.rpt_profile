@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 # Put all files in place. Run this on a dev machine.
 
-if [[ $(grep rpt_profile ~rpt/.bashrc | wc -l) == 0 ]]; then
-    echo 'source ~rpt/.rpt_profile/etc/bashrc' >> ~rpt/.bashrc
+if [[ $(pwd) != $HOME ]]; then
+    echo "Run from $HOME."
+fi
+
+if [[ $(grep rpt_profile .bashrc | wc -l) == 0 ]]; then
+    echo 'source .rpt_profile/etc/bashrc' >> .bashrc
 fi
 
 filenames='screenrc pylintrc vimrc.before vimrc.after'
 for filename in $filenames; do
-    ln -sf ~rpt/.rpt_profile/etc/$filename ~rpt/.$filename
+    ln -sf .rpt_profile/etc/$filename .$filename
 done
 
-mkdir -p ~rpt/.byobu
-for f in $(find ~rpt/.rpt_profile/etc/byobu -type f); do
-    cp $f ~rpt/.byobu
+mkdir -p .byobu
+for f in $(find .rpt_profile/etc/byobu -type f); do
+    cp $f .byobu
 done
 
 if [[ -e /usr/bin/byobu-launcher-install ]]; then
@@ -22,8 +26,8 @@ fi
 
 pip install --user flake8 pylint ipython
 
-if [[ -f ~rpt/.vim/Rakefile ]]; then
-    cd ~rpt/.vim && rake
+if [[ -f .vim/Rakefile ]]; then
+    cd .vim && rake
 fi
 
-source ~rpt/.bashrc
+source .bashrc

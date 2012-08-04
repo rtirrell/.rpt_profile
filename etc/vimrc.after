@@ -1,5 +1,5 @@
 set guioptions=aAce
-colorscheme molokai
+colorscheme wombat
 if has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"

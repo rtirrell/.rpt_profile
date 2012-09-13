@@ -1,32 +1,32 @@
 #!/usr/bin/env bash
 # Put all files in place. Run this on a dev machine.
 
-if [[ $(pwd) != $HOME ]]; then
-    echo "Run from $HOME."
+if [[ ! $(grep rpt_profile $HOME/.bash_profile) ]]; then
+    echo "source $HOME/.rpt_profile/etc/bashrc" >> $HOME/.bash_profile
 fi
 
-if [[ $(grep rpt_profile .bashrc | wc -l) == 0 ]]; then
-    echo 'source ~/.rpt_profile/etc/bashrc' >> .bashrc
-fi
-
-filenames='screenrc pylintrc vimrc.before vimrc.after'
+filenames='pylintrc vimrc.before vimrc.after'
 for filename in $filenames; do
-    ln -sf .rpt_profile/etc/$filename .$filename
-done
-source .bashrc
-
-mkdir -p .byobu
-for f in $(find .rpt_profile/etc/byobu -type f); do
-    cp $f .byobu
+    ln -sf $HOME/.rpt_profile/etc/$filename $HOME/.$filename
 done
 
-if [[ -e /usr/bin/byobu-launcher-install ]]; then
-    byobu-launcher-install
-    byobu-ctrl-a screen
+source $HOME/.bash_profile
+
+
+if [[ $(uname) != 'Darwin' ]]; then 
+    mkdir -p $HOME/.byobu
+    for f in $(find $HOME/.rpt_profile/etc/byobu -type f); do
+        cp $f $HOME/.byobu
+    done
+
+    if [[ -e /usr/bin/byobu-launcher-install ]]; then
+        byobu-launcher-install
+        byobu-ctrl-a screen
+    fi
 fi
 
 pip install --user flake8 pylint ipython
 
-if [[ -f .vim/Rakefile ]]; then
-    cd .vim && rake
+if [[ -f $HOME/.vim/Rakefile ]]; then
+    cd $HOME/.vim && rake
 fi

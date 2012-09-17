@@ -10,6 +10,9 @@ for filename in $filenames; do
     ln -sf $HOME/.rpt_profile/etc/$filename $HOME/.$filename
 done
 
+source $HOME/.bash_profile
+
+
 if [[ $(uname) != 'Darwin' ]]; then 
     mkdir -p $HOME/.byobu
     find $HOME/.rpt_profile/etc/byobu -type f -exec cp {} $HOME/.byobu \;
@@ -25,5 +28,3 @@ pip install --user flake8 pylint ipython
 if [[ -f $HOME/.vim/Rakefile ]]; then
     cd $HOME/.vim && rake
 fi
-
-source $HOME/.bash_profile

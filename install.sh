@@ -12,9 +12,7 @@ done
 
 if [[ $(uname) != 'Darwin' ]]; then 
     mkdir -p $HOME/.byobu
-    for f in $(find $HOME/.rpt_profile/etc/byobu -type f); do
-        cp $f $HOME/.byobu
-    done
+    find $HOME/.rpt_profile/etc/byobu -type f -exec cp {} $HOME/.byobu \;
 
     if [[ -e /usr/bin/byobu-launcher-install ]]; then
         byobu-launcher-install

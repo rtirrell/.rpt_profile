@@ -15,11 +15,7 @@ export CYANBOLD="\[\033[1;36m\]"
 export WHITE="\[\033[0;37m\]"
 export WHITEBOLD="\[\033[1;37m\]"
 
+export PS1="\n$CYAN[\A]$YELLOW \u@\h\[\033[00m\]:$BLUE\w\[\033[00m\] \\$ "
 export EDITOR=vim
-export PS1='\[\033k\033\\\]'$PS1
-if [[ $(uname) == Darwin ]]; then
-    export PS1="\n$CYAN[\A]$YELLOW \u@\h\[\033[00m\]:$BLUE\w\[\033[00m\] \\$ "
-fi
-
 export PATH="$PATH:$HOME/.rpt_profile/bin/"
 export PYTHONPATH="$PYTHONPATH:$HOME/.rpt_profile/"

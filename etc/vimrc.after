@@ -95,3 +95,7 @@ au FileType make set noexpandtab
 let g:syntastic_python_checker_args="--ignore=W291,W293,E203,E221,E251,E302,E303"
 
 set history=1000
+
+" CtrlP shouldn't manage working path at all (otherwise tries to use
+" relative to current file, which is rarely what I want).
+let g:ctrlp_working_path_mode = 0

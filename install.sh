@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # Put all files in place. Run this on a dev machine.
 
-if [[ ! $(grep rpt_profile $HOME/.bash_profile) ]]; then
-    echo "source $HOME/.rpt_profile/etc/bashrc" >> $HOME/.bash_profile
-fi
+for filename in .bash_profile .bashrc; do
+    if [[ ! $(grep rpt_profile $HOME/$filename) ]]; then
+        echo "source $HOME/.rpt_profile/etc/bashrc" >> $HOME/$filename
+    fi
+done
 
 filenames='pylintrc vimrc.before vimrc.after'
 for filename in $filenames; do

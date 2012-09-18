@@ -25,5 +25,5 @@ bind 'set completion-prefix-display-length 2'
 bind 'set show-all-if-ambiguous on'
 bind 'set show-all-if-unmodified on'
 
-# Treat a key and it's shifted cousin (e.g. '-' and '_') as identical.
+# Treat a key and its shifted cousin (e.g. '-' and '_') as identical.
 bind 'set completion-map-case on'

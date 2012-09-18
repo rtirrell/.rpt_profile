@@ -1,4 +1,5 @@
 alias ssh-ubuntu='ssh -i ~/.ec2/solum-keypair.pem -l ubuntu'
+
 function ssh-deployed {
     ssh -At sync.solumtech.com "ssh -p $1 solum@localhost"
 }

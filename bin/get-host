@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+"""Print the public DNS name of an instance specified by name."""
+
+import os
+import sys
+import boto
+from paver.easy import path
+
+# Make the hosts dir if doesn't exist.
+hosts_dir = path("~/.ec2-hosts/").expand()
+if not hosts_dir.exists():
+    os.mkdir(hosts_dir)
+
+# Use previously-looked-up hostname if its file exists.
+host_file = hosts_dir / sys.argv[1]
+if host_file.exists():
+    print host_file.text()
+    sys.exit()
+
+conn = boto.connect_ec2()
+filters = {"tag:Name": sys.argv[1]}
+
+reservations = conn.get_all_instances(filters = filters)
+instance = reservations[0].instances[0]
+host_file.write_text(instance.public_dns_name)
+print instance.public_dns_name

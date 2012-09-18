@@ -8,3 +8,7 @@ if [[ $(uname) == 'Linux' ]]; then
 else
     alias a='ls -lpG'
 fi
+
+if [[ $(uname) == 'Linux' ]]; then
+    alias ack='ack-grep'
+fi

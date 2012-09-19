@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 
-from paver.easy import *
+import getpass
+import os
+
+from paver.easy import sh
 from bin import do_children_if_svn
 
-def svn_up(d):
-    sh('svn up %s' % d)
+password = getpass.getpass()
+
+def svn_up(dir):
+    sh("svn up --username %s --password %s --non-interactive %s" 
+       % (os.environ["USER"], password, dir))
 
 do_children_if_svn(svn_up)

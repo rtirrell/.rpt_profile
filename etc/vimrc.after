@@ -7,7 +7,8 @@ if has("unix")
     endif
 endif
 
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" This is ugly.
+"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 set cursorline
 
 " Standard 4-character tabs and shifts.
@@ -24,7 +25,6 @@ set wildmode=longest,list,full
 
 " Override Janus' display of extraneous whitespace.
 set list!
-" This didn't cut it.
 set listchars=
 
 " :W also saves.
@@ -44,9 +44,9 @@ set autoread
 " for a few other triggers.
 set autowrite
 
-" Regular text width is 80 chars, display a margin at 90.
+" Regular text width is 80 chars, display a margin there.
 set textwidth=80
-set colorcolumn=90
+set colorcolumn=80
 
 " Ignore these files in wildcard matching, such as command-T uses.
 set wildignore+=*.py[oc],.svn,.git

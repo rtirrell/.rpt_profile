@@ -17,7 +17,8 @@ source $HOME/.bash_profile
 
 if [[ $(uname) != 'Darwin' ]]; then 
     mkdir -p $HOME/.byobu
-    find $HOME/.rpt_profile/etc/byobu -type f -exec cp {} $HOME/.byobu \;
+    find $HOME/.rpt_profile/etc/byobu -type f -exec ln -sf {} $HOME/.byobu \;
+    # cp {} $HOME/.byobu \;
 
     if [[ -e /usr/bin/byobu-launcher-install ]]; then
         byobu-launcher-install
